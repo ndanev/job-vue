@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Api from '../services/Api'
 
 const state = {
     token: localStorage.getItem("token") || '',
@@ -21,8 +22,7 @@ const getters = {
 const actions = {
     async login({ commit }, user) {
         commit('auth_request');
-        // TODO: Do not hardcode baseURL 
-        let response = await axios.post('http://localhost:5001/api/users/login', user);
+        const response = await Api().post('/users/login', user);
         if (response.data.success) {
             const token = response.data.token;
             const user = response.data.user;
@@ -35,7 +35,7 @@ const actions = {
     },
     async register({ commit }, userData) {
         commit('register_request');
-        let response = await axios.post('http://localhost:5001/api/users/register', userData);
+        const response = await Api().post('/users/register', userData);
         if (response.data.success !== undefined) {
             commit('register_success');
         }
@@ -43,7 +43,7 @@ const actions = {
     },
     async getProfile({ commit }) {
         commit('profile_request');
-        let response = await axios.get('http://localhost:5001/api/users/profile');
+        const response = await Api().get('/users/profile');
         commit('user_profile', response.data.user)
         return response;
     },
