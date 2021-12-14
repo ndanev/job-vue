@@ -2,15 +2,15 @@ import Api from '@/services/Api';
 
 export default {
     getAllJobs(search) {
-        return Api().get('/get-jobs', { params: { search: search } });
+        return Api().get('/jobs/get-jobs', { params: { search: search } });
     },
     showSingleJob(jobId) {
-        return Api().get(`/single-job/${jobId}`);
+        return Api().get(`/jobs/single-job/${jobId}`);
     },
     createJob(job) {
-        return Api().post('/create-job', job);
+        return Api().post('/jobs/create-job', job);
     },
     updateSingleJob(job) {
-        return Api().put(`/edit-job/${job._id}`, job);
+        return Api().put(`/jobs/edit-job/${job._id}`, job);
     }
 }

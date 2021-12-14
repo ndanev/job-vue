@@ -2,6 +2,6 @@ import axios from 'axios';
 
 export default () => {
     return axios.create({
-        baseURL: "http://localhost:5001/api/jobs"
+        baseURL: process.env.VUE_APP_API_URL
     })
 }
