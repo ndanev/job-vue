@@ -10,7 +10,7 @@
                 <span class="hero-innertitle">IT</span> opportunities.
               </h1>
               <p class="hero-lead">Read, applay and create personalized set of job matches.</p>
-              <div class="hero-buttons mt-4">
+              <div v-if="!isLoggedIn" class="hero-buttons mt-4">
                 <router-link class="button secondary-button" to="/register">
                   Get Started
                   <i class="fas fa-long-arrow-alt-right ml-2"></i>
@@ -487,7 +487,7 @@
 </template>
 
 <script>
-// import { mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 import Hero from "@/components/Hero.vue";
 export default {
   name: "Home",
@@ -499,8 +499,8 @@ export default {
       jobsCount: ""
     };
   },
-  // computed: {
-  //   ...mapGetters(["isLoggedIn"])
-  // }
+  computed: {
+    ...mapGetters(["isLoggedIn"])
+  }
 };
 </script>
