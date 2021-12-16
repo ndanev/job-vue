@@ -11,7 +11,7 @@
               </h1>
               <p class="hero-lead">Read, applay and create personalized set of job matches.</p>
               <div class="hero-buttons mt-4">
-                <router-link v-if="!isLoggedIn" class="button secondary-button" to="/register">
+                <router-link class="button secondary-button" to="/register">
                   Get Started
                   <i class="fas fa-long-arrow-alt-right ml-2"></i>
                 </router-link>
@@ -37,10 +37,10 @@
             <p
               class="section-lead"
             >We believe that you deserve a job search experience that is as human and personal as you are. We go beyond simple keyword searches.</p>
-            <a href="/jobs" class="section-link">
+            <router-link to="/jobs" class="section-link">
               Find Your Right Job
               <i class="fas fa-long-arrow-alt-right ml-2"></i>
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
@@ -487,7 +487,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+// import { mapGetters } from "vuex";
 import Hero from "@/components/Hero.vue";
 export default {
   name: "Home",
@@ -499,8 +499,8 @@ export default {
       jobsCount: ""
     };
   },
-  computed: {
-    ...mapGetters(["isLoggedIn"])
-  }
+  // computed: {
+  //   ...mapGetters(["isLoggedIn"])
+  // }
 };
 </script>

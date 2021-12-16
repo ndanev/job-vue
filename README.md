@@ -1,3 +1,4 @@
+![build status](https://github.com/ndanev/job-vue/actions/workflows/config.yml/badge.svg)
 # client
 
 ## Project setup
