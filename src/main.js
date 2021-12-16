@@ -6,11 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/app.css';
 import store from './store';
 import axios from 'axios';
-// import { sync } from 'vuex-router-sync'
 
 Vue.config.productionTip = false;
-
-// sync(store, router);
 
 /* Set up default vue's http modules for api call */
 Vue.prototype.$http = axios;
@@ -28,7 +25,7 @@ Vue.filter('formatDate', function (value) {
   const day = date.getDate();
   const year = date.getFullYear();
 
-  return [month, day, year].join(".");
+  return [day, month, year].join(".");
 });
 
 new Vue({

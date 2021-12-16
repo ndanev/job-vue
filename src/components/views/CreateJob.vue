@@ -205,9 +205,9 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import InputTag from "vue-input-tag";
 import { VueEditor } from "vue2-editor";
-import JobsService from "@/services/JobsService";
 export default {
   name: "CreateJob",
   components: {
@@ -234,9 +234,10 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['createJob']),
     async create() {
       try {
-        await JobsService.createJob(this.job);
+        await this.createJob(this.job);
         this.$router.push("/jobs");
       } catch (err) {
         console.log(err);

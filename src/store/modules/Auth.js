@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Api from '../services/Api'
+import Api from '@/services/Api'
 
 const state = {
     token: localStorage.getItem("token") || '',
