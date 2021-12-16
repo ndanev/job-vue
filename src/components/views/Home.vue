@@ -5,13 +5,20 @@
         <div class="row">
           <div class="col-md-6 mb-5 mb-md-0">
             <div class="hero-content">
-              <h1 class="hero-title">
+              <h1 class="hero-title" data-test="hero-title">
                 Most popular
-                <span class="hero-innertitle">IT</span> opportunities.
+                <span class="hero-inner-title" data-test="hero-inner-title">IT</span> opportunities.
               </h1>
-              <p class="hero-lead">Read, applay and create personalized set of job matches.</p>
+              <p
+                class="hero-lead"
+                data-test="hero-lead"
+              >Read, applay and create personalized set of job matches.</p>
               <div v-if="!isLoggedIn" class="hero-buttons mt-4">
-                <router-link class="button secondary-button" to="/register">
+                <router-link
+                  class="button secondary-button"
+                  to="/register"
+                  data-test="register-link"
+                >
                   Get Started
                   <i class="fas fa-long-arrow-alt-right ml-2"></i>
                 </router-link>
@@ -28,16 +35,14 @@
       <div class="container container-home">
         <div class="row">
           <div class="col-md-6">
-            <h2 class="section-title">
-              We help you to
-              find the right job
-            </h2>
+            <h2 class="section-title" data-test="section-1-title">We help you to find the right job</h2>
           </div>
           <div class="col-md-6">
             <p
               class="section-lead"
+              data-test="section-1-lead"
             >We believe that you deserve a job search experience that is as human and personal as you are. We go beyond simple keyword searches.</p>
-            <router-link to="/jobs" class="section-link">
+            <router-link to="/jobs" class="section-link" data-test="section-1-browse-link">
               Find Your Right Job
               <i class="fas fa-long-arrow-alt-right ml-2"></i>
             </router-link>
@@ -52,14 +57,17 @@
             <img src="@/assets/images/positive_attitude.png" class="img-fluid" alt />
           </div>
           <div class="col-md-6 d-flex align-items-center order-1 order-md-2">
-            <h2 class="section-title">Your Favorite Jobs with Different positions</h2>
+            <h2
+              class="section-title"
+              data-test="section-2-title"
+            >Your Favorite Jobs with Different positions</h2>
           </div>
         </div>
       </div>
     </section>
     <section class="section">
       <div class="container container-home">
-        <h2 class="section-title text-center">What You can do?</h2>
+        <h2 class="section-title text-center" data-test="section-3-title">What You can do?</h2>
         <div class="row">
           <div class="col-md-4 mb-3 mb-md-0">
             <div class="section-card">
@@ -189,7 +197,7 @@
                 <circle cx="44" cy="345.8493" r="14" fill="#746fbf" />
                 <circle cx="195" cy="540.51913" r="14" fill="#746fbf" />
               </svg>
-              <div>Read Our List of Jobs</div>
+              <div data-test="section-3-read">Read Our List of Jobs</div>
             </div>
           </div>
           <div class="col-md-4 mb-3 mb-md-0">
@@ -335,7 +343,7 @@
                 />
                 <circle cx="386.2497" cy="616.61448" r="34" fill="#e6e6e6" />
               </svg>
-              <div>Apply for Your Right Job</div>
+              <div data-test="section-3-apply">Apply for Your Right Job</div>
             </div>
           </div>
           <div class="col-md-4">
@@ -477,7 +485,7 @@
                   fill="#3f3d56"
                 />
               </svg>
-              <div>Create Your Own Job</div>
+              <div data-test="section-3-create">Create Your Own Job</div>
             </div>
           </div>
         </div>
@@ -493,11 +501,6 @@ export default {
   name: "Home",
   components: {
     Hero
-  },
-  data() {
-    return {
-      jobsCount: ""
-    };
   },
   computed: {
     ...mapGetters(["isLoggedIn"])
