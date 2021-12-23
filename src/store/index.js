@@ -33,16 +33,9 @@ export default new Vuex.Store({
     },
 
     mutations: {
-        SET_JOBS: (state, jobs) => {
-            state.jobs = jobs;
-        },
-        SET_NEW_JOB: (state, job) => {
-            state.jobs.unshift(job);
-        },
-        SET_JOB: (state, job) => {
-            state.job = job;
-        }
-
+        SET_JOBS: (state, jobs) => state.jobs = jobs,
+        SET_NEW_JOB: (state, job) => state.jobs.unshift(job),
+        SET_JOB: (state, job) => state.job = job
     },
 
     getters: {},
