@@ -47,27 +47,31 @@ describe('Home.vue', () => {
         expect(heroLead.text()).toBe('Read, applay and create personalized set of job matches.');
     });
 
-    it('Check for hero router link', () => {
-        const registerLink = wrapper.find("[data-test=register-link]");
+    it('Test get started button', () => {
+        const getStartedButton = wrapper.find("[data-test=get-started-button]");
 
         /* Test router-link path if user is not loggeIn */
-        expect(registerLink.exists()).toBe(true);
-        expect(registerLink.props("to")).toBe("/register");
-        expect(registerLink.text()).toBe('Get Started');
+        expect(getStartedButton.exists()).toBe(true);
+        expect(getStartedButton.props("to")).toBe("/register");
+        expect(getStartedButton.text()).toBe('Get Started');
     });
 
     it('Check for section 1', () => {
         const sectionTitle = wrapper.get("[data-test=section-1-title]");
         const sectionLead = wrapper.get("[data-test=section-1-lead]");
-        const sectionBrowseLink = wrapper.get("[data-test=section-1-browse-link]");
 
         /* Test section 1 content */
         expect(sectionTitle.text()).toBe("We help you to find the right job");
         expect(sectionLead.text()).toBe("We believe that you deserve a job search experience that is as human and personal as you are. We go beyond simple keyword searches.");
+    });
 
-        /* Test section 1 router-link path */
-        expect(sectionBrowseLink.props("to")).toBe("/jobs");
-        expect(sectionBrowseLink.text()).toBe('Find Your Right Job');
+    it('Test find your right job link', () => {
+        const findYourRightJob = wrapper.get("[data-test=find-your-right-job]");
+
+        /* Test find your right job link */
+        expect(findYourRightJob.exists()).toBe(true);
+        expect(findYourRightJob.props("to")).toBe("/jobs");
+        expect(findYourRightJob.text()).toBe('Find Your Right Job');
     });
 
     it('Check for section 2', () => {
