@@ -17,7 +17,7 @@
                 <router-link
                   class="button secondary-button"
                   to="/register"
-                  data-test="register-link"
+                  data-test="get-started-button"
                 >
                   Get Started
                   <i class="fas fa-long-arrow-alt-right ml-2"></i>
@@ -42,7 +42,7 @@
               class="section-lead"
               data-test="section-1-lead"
             >We believe that you deserve a job search experience that is as human and personal as you are. We go beyond simple keyword searches.</p>
-            <router-link to="/jobs" class="section-link" data-test="section-1-browse-link">
+            <router-link to="/jobs" class="section-link" data-test="find-your-right-job">
               Find Your Right Job
               <i class="fas fa-long-arrow-alt-right ml-2"></i>
             </router-link>
