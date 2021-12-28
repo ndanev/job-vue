@@ -6,11 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/app.css';
 import store from './store';
 import axios from 'axios';
-// import { sync } from 'vuex-router-sync'
 
 Vue.config.productionTip = false;
-
-// sync(store, router);
 
 /* Set up default vue's http modules for api call */
 Vue.prototype.$http = axios;
