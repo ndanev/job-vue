@@ -297,7 +297,10 @@ label {
 }
 
 .nav-link-logout {
-  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: white;
 }
 
 .card {

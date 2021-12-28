@@ -14,15 +14,15 @@
           <form class="contact-form" @submit.prevent="send">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="form-control" placeholder="Name" v-model="message.name" />
+              <input id="name" type="text" class="form-control" placeholder="Name" v-model="message.name" />
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" placeholder="Email" v-model="message.email" />
+              <input id="email" type="email" class="form-control" placeholder="Email" v-model="message.email" />
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea
+              <textarea id="message"
                 cols="30"
                 rows="10"
                 class="form-control"

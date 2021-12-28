@@ -2,7 +2,7 @@
   <header class="header">
     <div class="container container-home">
       <nav class="navbar navbar-expand-lg">
-        <router-link class="navbar-brand logo" to="/">
+        <router-link class="navbar-brand logo" to="/" data-test="logo">
           Job
           <div>
             <span>l</span>
@@ -32,21 +32,42 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link to="/" class="nav-link" exact @click.native="closeMenu">Home</router-link>
+              <router-link
+                to="/"
+                class="nav-link"
+                exact
+                @click.native="closeMenu"
+                data-test="home"
+              >Home</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link" @click.native="closeMenu">About</router-link>
+              <router-link
+                to="/about"
+                class="nav-link"
+                @click.native="closeMenu"
+                data-test="about"
+              >About</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/contact" class="nav-link" @click.native="closeMenu">Contact</router-link>
+              <router-link
+                to="/contact"
+                class="nav-link"
+                @click.native="closeMenu"
+                data-test="contact"
+              >Contact</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/faq" class="nav-link" @click.native="closeMenu">F&Q</router-link>
+              <router-link to="/faq" class="nav-link" @click.native="closeMenu" data-test="faq">F&Q</router-link>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <router-link to="/jobs" class="nav-link" @click.native="closeMenu">Browse Jobs</router-link>
+              <router-link
+                to="/jobs"
+                class="nav-link"
+                @click.native="closeMenu"
+                data-test="browse-jobs"
+              >Browse Jobs</router-link>
             </li>
             <li class="nav-item">
               <router-link
@@ -54,6 +75,7 @@
                 class="nav-link"
                 v-if="!isLoggedIn"
                 @click.native="closeMenu"
+                data-test="login"
               >Login</router-link>
             </li>
             <li class="nav-item">
@@ -62,10 +84,16 @@
                 class="nav-link"
                 v-if="!isLoggedIn"
                 @click.native="closeMenu"
+                data-test="register"
               >Register</router-link>
             </li>
             <li class="nav-item d-flex align-items-center ml-1">
-              <router-link to="/job/create" class="post-job" @click.native="closeMenu">
+              <router-link
+                to="/job/create"
+                class="post-job"
+                @click.native="closeMenu"
+                data-test="create-job"
+              >
                 <i class="fas fa-plus-circle"></i> Create Job
               </router-link>
             </li>
@@ -82,16 +110,20 @@
                 Profile
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <router-link to="/profile" class="nav-link" @click.native="closeMenu">Your Account</router-link>
+                <router-link
+                  to="/profile"
+                  class="nav-link"
+                  @click.native="closeMenu"
+                  data-test="profile"
+                >Your Account</router-link>
                 <div class="dropdown-divider"></div>
-                <a
-                  to="/logout"
+                <button
                   class="nav-link nav-link-logout"
-                  @click.prevent="logoutUser"
-                  @click="closeMenu"
+                  @click.prevent="logoutUser(); closeMenu();"
+                  data-test="logout"
                 >
                   <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
+                </button>
               </div>
             </li>
           </ul>
@@ -107,7 +139,7 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "Header",
   computed: {
-    ...mapGetters(["isLoggedIn", "user"])
+    ...mapGetters(["isLoggedIn"])
   },
   methods: {
     ...mapActions(["logout"]),
