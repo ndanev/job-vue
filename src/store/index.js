@@ -14,19 +14,19 @@ export default new Vuex.Store({
     actions: {
         /* api request to get all jobs */
         getJobs: ({ commit }, search) => {
-            Api().get('/jobs/get-jobs', { params: { search } }).then(response => {
+            Api().get('/job', { params: { search } }).then(response => {
                 commit('SET_JOBS', response.data);
             }).catch(error => console.log(error));
         },
         /* api request to get single jobs */
-        getJob: ({ commit }, jobId) => {
-            Api().get(`/jobs/single-job/${jobId}`).then(response => {
+        getJob: ({ commit }, id) => {
+            Api().get(`/job/${id}`).then(response => {
                 commit('SET_JOB', response.data);
             })
         },
         /* api request to get create a new job */
         createJob: ({ commit }, job) => {
-            Api().post('/jobs/create-job', job).then(response => {
+            Api().post('/job', job).then(response => {
                 commit('SET_NEW_JOB', response.data);
             }).catch(error => console.log(error));
         }
@@ -34,7 +34,7 @@ export default new Vuex.Store({
 
     mutations: {
         SET_JOBS: (state, jobs) => state.jobs = jobs,
-        SET_NEW_JOB: (state, job) => state.jobs.unshift(job),
+        SET_NEW_JOB: (state, jobs) => state.jobs.unshift(jobs),
         SET_JOB: (state, job) => state.job = job
     },
 

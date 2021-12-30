@@ -22,7 +22,7 @@ const getters = {
 const actions = {
     async login({ commit }, user) {
         commit('auth_request');
-        const response = await Api().post('/users/login', user);
+        const response = await Api().post('/user/login', user);
         if (response.data.success) {
             const token = response.data.token;
             const user = response.data.user;
@@ -35,7 +35,7 @@ const actions = {
     },
     async register({ commit }, userData) {
         commit('register_request');
-        const response = await Api().post('/users/register', userData);
+        const response = await Api().post('/user/register', userData);
         if (response.data.success !== undefined) {
             commit('register_success');
         }
@@ -43,7 +43,7 @@ const actions = {
     },
     async getProfile({ commit }) {
         commit('profile_request');
-        const response = await Api().get('/users/profile');
+        const response = await Api().get('/user/profile');
         commit('user_profile', response.data.user)
         return response;
     },
