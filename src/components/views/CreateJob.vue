@@ -238,7 +238,7 @@ export default {
     async create() {
       try {
         await this.createJob(this.job);
-        this.$router.push("/jobs");
+        await this.$router.push("/jobs");
       } catch (err) {
         console.log(err);
       }
