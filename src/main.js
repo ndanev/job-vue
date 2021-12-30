@@ -25,7 +25,7 @@ Vue.filter('formatDate', function (value) {
   const day = date.getDate();
   const year = date.getFullYear();
 
-  return [month, day, year].join(".");
+  return [day, month, year].join(".");
 });
 
 new Vue({

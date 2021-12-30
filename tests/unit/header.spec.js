@@ -151,7 +151,7 @@ describe('Header.vue', () => {
 
     // it('Test the logout navigation button ', () => {
     //     const mockPush = jest.fn();
-    //     wrapper.vm.$router.push = mockPush;;;
+    //     wrapper.vm.$router.push = mockPush;
     //     expect(mockPush).toHaveBeenCalledWith('/login');
     // });
 });

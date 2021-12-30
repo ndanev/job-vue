@@ -42,9 +42,11 @@
 </template>
 
 <script>
-import JobsService from "@/services/JobsService";
+// import JobsService from "@/services/JobsService";
+import { mapActions } from 'vuex';
 import SearchJob from "@/components/SearchJob.vue";
 import Loading from "@/components/Loading";
+
 export default {
   name: "Jobs",
   components: {
@@ -53,16 +55,26 @@ export default {
   },
   data() {
     return {
-      jobs: [],
+      // jobs: [],
       loading: false
     };
   },
+  computed: {
+    jobs() {
+      return this.$store.state.jobs;
+    }
+  },
+  async mounted() {
+    await this.$store.dispatch('getJobs');
+  },
   watch: {
+    ...mapActions(["getJobs"]),
     "$route.query.search": {
       immediate: true,
-      async handler(value) {
+      async handler() {
         this.loading = true;
-        this.jobs = (await JobsService.getAllJobs(value)).data;
+        // this.jobs = (await JobsService.getAllJobs(value)).data;
+        // this.jobs = await this.getJobs(value);
         this.loading = false;
       }
     }
