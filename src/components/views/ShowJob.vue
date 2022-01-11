@@ -99,7 +99,7 @@ export default {
   },
   data() {
     return {
-      job: {}
+      job: {},
     };
   },
   async mounted() {

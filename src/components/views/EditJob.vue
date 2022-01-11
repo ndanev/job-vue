@@ -219,7 +219,7 @@ export default {
       const jobId = this.$route.params.jobId;
       try {
         await JobsService.updateSingleJob(this.job);
-        this.$router.push(`/job/${jobId}`);
+        await this.$router.push(`/job/${jobId}`);
       } catch (err) {
         console.log(err);
       }
