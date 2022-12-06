@@ -2,15 +2,14 @@ import Vue from "vue";
 import Vuex from "vuex";
 import Api from '@/services/Api'
 import Auth from "./modules/Auth";
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
         jobs: [],
-        job: null
+        job: null,
+        globalJobs: null
     },
-
     actions: {
         /* api request to get all jobs */
         getJobs: ({ commit }, search) => {
@@ -35,7 +34,8 @@ export default new Vuex.Store({
     mutations: {
         SET_JOBS: (state, jobs) => state.jobs = jobs,
         SET_NEW_JOB: (state, jobs) => state.jobs.unshift(jobs),
-        SET_JOB: (state, job) => state.job = job
+        SET_JOB: (state, job) => state.job = job,
+        SET_GLOBAL_JOBS: (state, jobs) => state.globalJobs = jobs
     },
 
     getters: {},

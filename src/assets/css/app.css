@@ -65,6 +65,11 @@ body {
   }
 }
 
+.section-global-jobs {
+  background-color: #F1F2F3;
+  padding-top: 85px;
+}
+
 .custom-icon {
   width: 75px;
   height: 75px;
@@ -545,8 +550,8 @@ label {
   color: #2d322f;
   font-size: 1.2rem;
   text-decoration: underline;
-  -webkit-transition: all .25;
-  transition: all .25;
+  -webkit-transition: all ease 0.25;
+  transition: all ease 0.25;
 }
 
 .section-link:hover {

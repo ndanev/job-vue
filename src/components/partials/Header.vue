@@ -63,11 +63,19 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <router-link
+                to="/global-jobs"
+                class="nav-link"
+                @click.native="closeMenu"
+                data-test="global-jobs"
+              >Global Jobs</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
                 to="/jobs"
                 class="nav-link"
                 @click.native="closeMenu"
                 data-test="browse-jobs"
-              >Browse Jobs</router-link>
+              >Browse Our Jobs</router-link>
             </li>
             <li class="nav-item">
               <router-link

@@ -15,6 +15,8 @@ import Profile from '@/components/views/Profile.vue';
 import CreateJob from '@/components/views/CreateJob.vue';
 import ShowJob from '@/components/views/ShowJob.vue';
 import EditJob from '@/components/views/EditJob.vue';
+import GlobalJobs from '@/components/views/GlobalJobs.vue';
+import showGlobalJob from '@/components/views/showGlobalJob.vue';
 
 const routes = [
     {
@@ -91,6 +93,22 @@ const routes = [
         component: EditJob,
         meta: {
             requiresAuth: true
+        }
+    },
+    {
+        path: '/global-jobs',
+        name: 'globalJobs',
+        component: GlobalJobs,
+        meta: {
+            requiresAuth: false
+        }
+    },
+    {
+        path: '/global-jobs/:slug',
+        name: 'showGlobalJob',
+        component: showGlobalJob,
+        meta: {
+            requiresAuth: false
         }
     },
     { path: '*', redirect: '/' }
