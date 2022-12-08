@@ -656,6 +656,7 @@ label {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  border-radius: 50%;
 }
 
 @media (max-width: 767px) {
@@ -772,6 +773,7 @@ label {
   -o-object-position: center;
      object-position: center;
   margin-right: 15px;
+  border-radius: 50%;
 }
 
 @media (max-width: 767px) {

@@ -568,6 +568,7 @@ label {
         height: 75px;
         object-fit: cover;
         object-position: center;
+        border-radius: 50%;
 
         @media (max-width: 767px) {
             width: 35px;
@@ -671,6 +672,7 @@ label {
         object-fit: cover;
         object-position: center;
         margin-right: 15px;
+        border-radius: 50%;
 
         @media (max-width: 767px) {
             width: 55px;

@@ -20,7 +20,7 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <h4>Company</h4>
+          <h4>Useful Links</h4>
           <ul class="footer-list">
             <li class="footer-item">
               <router-link class="footer-link" to="/">Home</router-link>

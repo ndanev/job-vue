@@ -5,7 +5,8 @@
         <div class="row">
           <div class="col-md-12 d-flex align-items-center justify-content-between">
             <div class="single-job-title">
-              <img :src="job.companyImageUrl" alt />
+              <img v-if="job.companyImageUr" :src="job.companyImageUrl" :alt="job.jobTitle" />
+              <img v-else src="@/assets/images/company-logo-placeholder.jpg" :alt="job.jobTitle" />
               <div>
                 <h1 class="hero-title">{{job.jobTitle}}</h1>
                 <div class="single-job-title-text">
