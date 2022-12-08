@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 .bg-yellow {
   background-color: rgba(255, 193, 7, 0.5);
 }
@@ -890,6 +891,51 @@ label {
   text-decoration: none;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
+}
+
+/****** GLOBAL JOBS ******/
+.globa-job-card {
+  background-color: white;
+  padding: 1rem;
+  position: relative;
+  border-radius: 5px;
+}
+
+.globa-job-remote {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  background-color: #32d6a1;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.global-job-tag {
+  margin-right: 1rem;
+  font-size: 12px;
+  background-color: #746fbf;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.globa-job-link {
+  color: #746fbf;
+  font-weight: bold;
+  margin: 1rem 0 0 0;
+  display: inline-block;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border: 2px solid #746fbf;
+  padding: 5px 16px;
+  border-radius: 5px;
+}
+
+.globa-job-link:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 .footer {

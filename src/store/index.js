@@ -34,11 +34,19 @@ export default new Vuex.Store({
     mutations: {
         SET_JOBS: (state, jobs) => state.jobs = jobs,
         SET_NEW_JOB: (state, jobs) => state.jobs.unshift(jobs),
-        SET_JOB: (state, job) => state.job = job,
-        SET_GLOBAL_JOBS: (state, jobs) => state.globalJobs = jobs
+        SET_JOB: (state, job) => state.job = job
     },
 
-    getters: {},
+    getters: {
+        processedJobs: (state) => {
+            try {
+                let jobs = state.jobs
+                return jobs
+            } catch (error) {
+                console.error(error.message)
+            }
+        }
+    },
 
     modules: {
         Auth

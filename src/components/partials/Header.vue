@@ -67,7 +67,7 @@
                 class="nav-link"
                 @click.native="closeMenu"
                 data-test="global-jobs"
-              >Global Jobs</router-link>
+              >Arbeitnow API Jobs</router-link>
             </li>
             <li class="nav-item">
               <router-link
@@ -123,7 +123,7 @@
                   class="nav-link"
                   @click.native="closeMenu"
                   data-test="profile"
-                >Your Account</router-link>
+                >Your Profile</router-link>
                 <div class="dropdown-divider"></div>
                 <button
                   class="nav-link nav-link-logout"
