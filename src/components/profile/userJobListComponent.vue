@@ -10,11 +10,11 @@
     </thead>
     <tbody>
       <tr v-for="job in currentUser.jobs" :key="job._id">
-        <td>{{ job.jobTitle }}</td>
+        <td>{{ job.title }}</td>
         <td>
-          <a :href="job.applicationTarget" target="_blank">{{ job.companyName }}</a>
+          <a :href="job.target" target="_blank">{{ job.companyName }}</a>
         </td>
-        <td>{{ job.emailAddress }}</td>
+        <td>{{ job.email }}</td>
         <td>
           <router-link :to="{ name: 'editJob', params: { jobId: job._id }}">Edit</router-link>
         </td>

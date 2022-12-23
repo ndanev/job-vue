@@ -24,7 +24,7 @@
                   class="form-text"
                 >Concise and clear, name the role. Omit location or job type.</small>
                 <input
-                  v-model="job.jobTitle"
+                  v-model="job.title"
                   type="text"
                   class="form-control"
                   id="job-title"
@@ -36,7 +36,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="job-type">Job type</label>
-                    <select v-model="job.jobType" id="job-type" class="form-control" required>
+                    <select v-model="job.type" id="job-type" class="form-control" required>
                       <option value="full-time">Full time</option>
                       <option value="part-time">Part time</option>
                       <option value="freelance">Freelance</option>
@@ -65,7 +65,7 @@
                 <small
                   class="form-text"
                 >Describe the job as clear as possible. Select any text to apply styles.</small>
-                <VueEditor id="job-desc" v-model="job.jobDesc" />
+                <VueEditor id="job-desc" v-model="job.description" />
               </div>
               <div class="form-group">
                 <label for="job-tags">Technologies</label>
@@ -110,7 +110,7 @@
                       class="form-text"
                     >Send applications to this email address or provide the URL.</small>
                     <input
-                      v-model="job.emailAddress"
+                      v-model="job.email"
                       type="text"
                       class="form-control"
                       id="job-company-email"
@@ -127,7 +127,7 @@
                       class="form-text"
                     >Send applications to this email address or provide the URL.</small>
                     <input
-                      v-model="job.applicationTarget"
+                      v-model="job.target"
                       type="text"
                       class="form-control"
                       id="job-target"
@@ -217,12 +217,12 @@ export default {
   data() {
     return {
       job: {
-        jobTitle: null,
-        jobType: null,
+        title: null,
+        type: null,
         level: null,
-        jobDesc: null,
-        applicationTarget: null,
-        emailAddress: null,
+        description: null,
+        target: null,
+        email: null,
         companyName: null,
         companyImageUrl: null,
         skills: [],

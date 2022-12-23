@@ -5,21 +5,21 @@
         <div class="row">
           <div class="col-md-12 d-flex align-items-center justify-content-between">
             <div class="single-job-title">
-              <img v-if="job.companyImageUr" :src="job.companyImageUrl" :alt="job.jobTitle" />
-              <img v-else src="@/assets/images/company-logo-placeholder.jpg" :alt="job.jobTitle" />
+              <img v-if="job.companyImageUrl" :src="job.companyImageUrl" :alt="job.title" />
+              <img v-else src="@/assets/images/company-logo-placeholder.jpg" :alt="job.title" />
               <div>
-                <h1 class="hero-title">{{job.jobTitle}}</h1>
+                <h1 class="hero-title">{{job.title}}</h1>
                 <div class="single-job-title-text">
                   <span class="single-job-title-at">at</span>
                   <span>{{job.companyName}}</span> -
                   <a
-                    v-if="job.applicationTarget !== null"
-                    :href="job.applicationTarget"
+                    v-if="job.target !== null"
+                    :href="job.target"
                     target="_blank"
                     class="single-job-link single-job-link-website"
                   >
                     <i class="fas fa-external-link-alt"></i>
-                    {{job.applicationTarget}}
+                    {{job.target}}
                   </a>
                 </div>
               </div>
@@ -46,7 +46,7 @@
           </div>
           <div class="col-md-3 mb-3 mb-md-0">
             <div class="single-job-info-title">Job Type</div>
-            <div class="single-job-info-value">{{job.jobType}}</div>
+            <div class="single-job-info-value">{{job.type}}</div>
           </div>
           <div class="col-md-3 mb-3 mb-md-0">
             <div class="single-job-info-title">Salary</div>
@@ -58,7 +58,7 @@
           </div>
           <div class="col-md-3">
             <div class="single-job-info-title">Posted</div>
-            <div class="single-job-info-value">{{job.date | formatDate(job.date)}}</div>
+            <div class="single-job-info-value">{{job.createdAt | formatDate(job.createdAt)}}</div>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@
         <div class="row">
           <div class="col-md-9 mb-5">
             <h2 class="section-title">Job description</h2>
-            <div class="single-job-company-text" v-html="job.jobDesc"></div>
+            <div class="single-job-company-text" v-html="job.description"></div>
             <div class="single-job-company-skills">
               <div class="job-card-technologies">
                 <span
@@ -81,7 +81,7 @@
           </div>
           <div class="col-md-3">
             <div class="single-job-apply">
-              <a :href="'mailto:' + job.emailAddress" class="apply-button">Apply Now!</a>
+              <a :href="'mailto:' + job.email" class="apply-button">Apply Now!</a>
             </div>
           </div>
         </div>

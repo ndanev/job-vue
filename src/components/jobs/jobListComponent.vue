@@ -3,12 +3,12 @@
     <div class="col-md-12 mb-3" v-for="job in jobs" :key="job._id">
       <div class="job-card">
         <div class="job-card-image">
-          <img v-if="job.companyImageUrl" :src="job.companyImageUrl" :alt="job.jobTitle" />
-          <img v-else src="@/assets/images/company-logo-placeholder.jpg" :alt="job.jobTitle" />
+          <img v-if="job.companyImageUrl" :src="job.companyImageUrl" :alt="job.title" />
+          <img v-else src="@/assets/images/company-logo-placeholder.jpg" :alt="job.title" />
         </div>
         <div class="job-card-content">
           <div class="job-card-title">
-            <router-link :to="{ name: 'showJob', params: { jobId: job._id }}">{{job.jobTitle}}</router-link>
+            <router-link :to="{ name: 'showJob', params: { jobId: job._id }}">{{job.title}}</router-link>
           </div>
           <div class="job-card-company">
             <span>{{job.companyName}}</span>
@@ -21,9 +21,9 @@
               class="job-card-technologies-item"
             >{{skill}}</span>
           </div>
-          <div class="job-card-desc" v-html="job.jobDesc.substring(0,100)"></div>
+          <div class="job-card-desc" v-html="job.description.substring(0,100)"></div>
         </div>
-        <div class="job-card-type bg-yellow">{{job.jobType}}</div>
+        <div class="job-card-type bg-yellow">{{job.type}}</div>
       </div>
     </div>
   </div>
