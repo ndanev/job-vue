@@ -16,7 +16,7 @@
       <global-job-list-component :globalJobs="globalJobs"></global-job-list-component>
     </div>
     <div v-else-if="globalJobs.length <= 0 && !loading" class="container">
-      <div class="row">
+      <div class="row mt-4">
         <div class="col-12">Currently there is no jobs.</div>
       </div>
     </div>
@@ -49,6 +49,7 @@ export default {
         this.loading = true;
         const { data } = await axios.get(apiUrl)
         this.globalJobs = data.data
+        console.log("globalJobs",this.globalJobs)
         this.loading = false;
       } catch (error) {
         console.error(error)

@@ -56,12 +56,14 @@ body {
   }
 }
 
-.section-about, .section-contact {
+.section-about,
+.section-contact {
   padding-top: 160px;
 }
 
 @media (max-width: 767px) {
-  .section-about, .section-contact {
+  .section-about,
+  .section-contact {
     padding-top: 100px;
   }
 }
@@ -121,6 +123,12 @@ body {
   top: 0;
   width: 100%;
   z-index: 2;
+}
+
+@media (max-width: 991px) {
+  #navbarNav {
+    height: calc(100vh - 81px);
+  }
 }
 
 label {
@@ -725,13 +733,23 @@ label {
   color: #101010;
 }
 
-.job-card-desc h1, .job-card-desc h2, .job-card-desc h3, .job-card-desc h4, .job-card-desc h5, .job-card-desc h6, .job-card-desc p, .job-card-desc a {
+.job-card-desc h1,
+.job-card-desc h2,
+.job-card-desc h3,
+.job-card-desc h4,
+.job-card-desc h5,
+.job-card-desc h6,
+.job-card-desc p,
+.job-card-desc a {
   font-size: 14px;
   margin-bottom: 0;
   font-weight: 400;
 }
 
-.login, .register, .profile, .faq {
+.login,
+.register,
+.profile,
+.faq {
   margin-top: 7rem;
   padding-bottom: 2rem;
 }
@@ -844,7 +862,12 @@ label {
   color: #101010;
 }
 
-.single-job-company-text h1, .single-job-company-text h2, .single-job-company-text h3, .single-job-company-text h4, .single-job-company-text h5, .single-job-company-text h6 {
+.single-job-company-text h1,
+.single-job-company-text h2,
+.single-job-company-text h3,
+.single-job-company-text h4,
+.single-job-company-text h5,
+.single-job-company-text h6 {
   color: #2d322f;
 }
 

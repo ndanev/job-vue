@@ -19,11 +19,11 @@ if (token) {
   Vue.prototype.$http.defaults.headers.common['Authorization'] = token;
 }
 
-Vue.filter('formatDate', function (value) {
-  const date = new Date(value);
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const year = date.getFullYear();
+Vue.filter('formatDate', (value) => {
+  let date = new Date(value);
+  let month = date.getMonth() + 1;
+  let day = date.getDate();
+  let year = date.getFullYear();
 
   return [day, month, year].join(".");
 });

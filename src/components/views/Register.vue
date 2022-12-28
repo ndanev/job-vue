@@ -6,7 +6,7 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-header">
-              <h1 class="d-flex justify-content-center align-items-center">Register Account</h1>
+              <h1 class="d-flex justify-content-center align-items-center">Register</h1>
             </div>
             <div class="card-body">
               <form @submit.prevent="registerUser">
