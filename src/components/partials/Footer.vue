@@ -22,28 +22,16 @@
         <div class="col-md-4">
           <h4>Useful Links</h4>
           <ul class="footer-list">
-            <li class="footer-item">
-              <router-link class="footer-link" to="/">Home</router-link>
-            </li>
-            <li class="footer-item">
-              <router-link class="footer-link" to="/about">About</router-link>
-            </li>
-            <li class="footer-item">
-              <router-link to="/job/create" class="footer-link">Post a Job</router-link>
-            </li>
-            <li class="footer-item">
-              <router-link to="/jobs" class="footer-link">Browse Jobs</router-link>
+            <li v-for="item in footerUsefulLinks" :key="item.id" class="footer-item">
+              <router-link class="footer-link" :to="item.href">{{ item.name }}</router-link>
             </li>
           </ul>
         </div>
         <div class="col-md-4">
           <h4>Support</h4>
           <ul class="footer-list">
-            <li class="footer-item">
-              <router-link class="footer-link" to="/contact">Contact</router-link>
-            </li>
-            <li class="footer-item">
-              <router-link class="footer-link" to="/faq">F&Q</router-link>
+            <li v-for="item in footerSupportLink" :key="item.id" class="footer-item">
+              <router-link class="footer-link" :to="item.href">{{ item.name }}</router-link>
             </li>
           </ul>
         </div>
@@ -63,7 +51,7 @@
         <div class="col-md-4"></div>
         <div
           class="col-md-4 d-flex align-items-center justify-content-left justify-content-md-end"
-        >&copy; {{ new Date().getFullYear() }}, powerd by Nemanja Danev</div>
+        >&copy; {{ currentYear }}, powerd by Nemanja Danev</div>
       </div>
     </div>
   </footer>
@@ -73,8 +61,50 @@
 import { mapGetters } from "vuex";
 export default {
   name: "Footer",
+  data() {
+    return {
+      footerUsefulLinks: [
+        {
+          id: 'home',
+          name: 'Home',
+          href: '/'
+        },
+        {
+          id: 'about',
+          name: 'About',
+          href: '/about'
+        },
+        {
+          id: 'post-job',
+          name: 'Post a Job',
+          href: '/job/create'
+        },
+        {
+          id: 'browse-jobs',
+          name: 'Browse Jobs',
+          href: '/jobs'
+        }
+      ],
+      footerSupportLink: [
+        {
+          id: 'contact',
+          name: 'Contact',
+          href: '/contact'
+        },
+        {
+          id: 'faq',
+          name: 'F&Q',
+          href: '/faq'
+        },
+      ]
+    }
+  },
   computed: {
-    ...mapGetters(["isLoggedIn"])
+    ...mapGetters(["isLoggedIn"]),
+    currentYear() {
+      let currentYear = new Date().getFullYear();
+      return currentYear
+    }
   }
 };
 </script>

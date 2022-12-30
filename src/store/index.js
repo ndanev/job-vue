@@ -7,8 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         jobs: [],
-        job: null,
-        globalJobs: null
+        job: null
     },
     actions: {
         /* api request to get all jobs */
