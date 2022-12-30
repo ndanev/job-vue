@@ -21,7 +21,6 @@ const getters = {
 
 const actions = {
     async login({ commit }, user) {
-        commit('auth_request');
         const response = await Api().post('/user/login', user);
         if (response.data.success) {
             const token = response.data.token;
@@ -42,7 +41,6 @@ const actions = {
         return response;
     },
     async getProfile({ commit }) {
-        commit('profile_request');
         const response = await Api().get('/user/profile');
         commit('user_profile', response.data.user)
         return response;
@@ -56,16 +54,10 @@ const actions = {
 };
 
 const mutations = {
-    auth_request(state) {
-        state.status = 'loading'
-    },
     auth_success(state, token, user) {
         state.token = token,
             state.user = user,
             state.status = 'success'
-    },
-    register_request(state) {
-        state.status = 'loading'
     },
     register_success(state) {
         state.status = 'success'
@@ -74,9 +66,6 @@ const mutations = {
         state.status = ''
         state.token = ''
         state.user = ''
-    },
-    profile_request(state) {
-        state.status = 'loading'
     },
     user_profile(state, user) {
         state.user = user

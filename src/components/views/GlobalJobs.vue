@@ -49,7 +49,6 @@ export default {
         this.loading = true;
         const { data } = await axios.get(apiUrl)
         this.globalJobs = data.data
-        console.log("globalJobs",this.globalJobs)
         this.loading = false;
       } catch (error) {
         console.error(error)

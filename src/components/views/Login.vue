@@ -80,7 +80,7 @@ export default {
         })
         .catch(err => {
           this.errorMessage = 'Wrong credentials!';
-          console.log(err);
+          console.log(err.message);
         });
     }
   }
